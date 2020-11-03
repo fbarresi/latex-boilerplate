@@ -1,0 +1,143 @@
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{german,a4wide,amsmath,amssymb}
+
+% Mann will direkt Umlaute eingeben können statt \"a, \"o, \"u usw.
+% Entweder:
+%\usepackage[latin1]{inputenc}
+% oder:
+%\usepackage{umlaut}
+
+
+% Trennvorschl"age (in {} einfuegen, wenn nicht automatisch getrennt wird:
+% z.B. Authen-ti-ka-tions-sys-tem)
+\hyphenation{}
+
+\hyphenation{min-des-tens}
+
+
+%-------------------------- Formatsachen --------------------------%
+
+% Bild-, Tabellenunterschriften veraendern:
+% Nummer fett, kleinerer Text fuer Bildunterschrift
+\usepackage[bf,small]{caption}
+
+\usepackage{mathpazo}  % -- Palatino als Zeichensatz -- einfach diese
+					   % Zeile auskommentieren, falls nicht installiert
+%\usepackage{mathptmx}  % -- Times als Zeichensatz
+
+% Zum Unterscheiden von Entwurfs- und endgueltiger Fassung
+%\usepackage{draftcopy}
+%\draftcopySetGrey{0.90}   %   90% = sehr helles Grau
+%\draftcopyName{ENTWURF}{155}   % statt ``DRAFT''
+%\draftcopySetScale{1}
+
+%--------------- Zeilen- und Absatzabstaende ----------------------%
+\setlength{\parindent}{0em}
+\setlength{\parskip}{\medskipamount}    % Abstand zwischen Abs"atzen
+
+% ---------- Umgebungen f"ur Satz/ Lemma, etc. --------------------%
+\newtheorem{satz}{Satz}
+\newtheorem{nota}{Notation}
+\newtheorem{defi}{Definition}
+\newtheorem{kons}{Konstruktion}
+
+\newenvironment{notation}{\noindent \textbf{Notation: }}{}
+\newenvironment{beweis}{\noindent \textbf{Beweis: }}{}
+\newenvironment{anmerkung}{\noindent \textbf{Anmerkung: }}{}
+\newenvironment{anmerkungen}{\noindent \textbf{Anmerkungen: }}{}
+\newenvironment{beispiel}{\noindent \textbf{Beispiel: }}{}
+\newenvironment{beispiele}{\noindent \textbf{Beispiele: }}{}
+
+% URLs und Mailadressen etc. richtig trennen:
+\usepackage{url}
+% Auch praktisch fuer Mailadressen: \url{blabla@laberlaber.de}
+
+% --------------------- Eigene Befehle fuer math. Mengen ---------%
+\newcommand{\N}{{\rm I\!N}}             % die natuerlichen Zahlen
+\newcommand{\Z}{\mathbb{Z}}             % fuer ganze Zahlen
+\newcommand{\R}{\mathbb{R}}             % die reellen Zahlen
+\newcommand{\Prim}{{\rm I\!P}}          % die Primzahlen
+
+
+% -- Sinnvolle Befehle, um sich selbst Notizen im Text zu machen --%
+
+% "Ungeordnete Gedanken, die noch irgendwo reinsollen":
+\newcommand{\kramsubsection}[1][Unsortierte Textfragmente]{%
+\subsection*{#1}%
+\addcontentsline{toc}{subsection}{#1}%
+}
+
+% Randbemerkung:
+\newcommand{\bemerkung}[1]{\marginpar{\small\textsl{\textsf{#1}}}}
+
+% "Hier muss noch [weiter-]geschrieben werden" (Baustellensymbol am Rand)
+%
+% [Damit dieser Befehl funktioniert, muss man natuerlich erstmal
+%  das Icon "Baustelle.eps" besorgen!!  Also entweder selbermachen
+%  oder downloaden:
+%  http://www.net.in.tum.de/teaching/WS04/routing/Baustelle.eps.gz  ]
+\newcommand{\baustelle}[1][]{
+ \marginpar{%
+   \centerline{\includegraphics[scale=0.3]{Baustelle.eps}}
+   {\small\textsl{\textsf{\raggedright #1}}}
+}}
+
+
+
+
+\begin{document}
+
+\title{Thema X}
+\author{Fridolin Wei"salles \\
+  (\texttt{fridolw@in.tum.de})\\[5mm]
+  Seminar "`Internetrouting"' , \\
+  Technische Universit"at M"unchen
+}
+  
+\date{WS\,2004/2005 (Version vom \today)}
+
+\maketitle
+
+\abstract{Dieses Papier behandelt ... (kurze Zusammenfassung des Inhalts)}
+
+\section{Einleitung}
+Hier wird eine Motivation f"ur das Papier gegeben sowie der Aufbau kurz 
+erl\"autert.  Grunds"atzlich:  Was ist das Problem?  Warum ist es ein
+Problem?  Warum ist es interessant, das Problem zu l"osen?
+
+\section{Kapitel}
+
+\subsection{Unterkapitel}
+
+\begin{defi}[Beispieldefinition]
+Gegeben ... wird ... definiert als ..
+\end{defi}
+
+\section{Kapitel}
+
+Shamir f"uhrt in \cite{sham79} das Konzept der Geheimniszerlegung ein 
+(Beispielzitat).
+
+\section{Zusammenfassung}
+Zum Schluss nochmal Zusammenfassung, was Papier behandelt hat und 
+Schlussfolgerungen, Verweis auf Praxis o.\,"a.
+
+
+\begin{thebibliography}{12}
+\bibitem[HaKT1 98]{HaKT1 98} \footnote{In die 
+Bibliographie sollte s"amtliche benutzte Literatur 
+rein, auch nicht beim eigenen Vortrag angegebene, aber benutzte Papiere 
+und B\"ucher. Gleichzeitig sollte aber alles in der Literaturliste angegebene
+mindestens einmal im Artikel zitiert werden, sonst nicht auflisten.}
+        Michael Harkavy, J. D. Tygar, Hiroaki Kikuchi: {\sl Multi-round 
+        Anonymous Auction Protocols}; 1st IEEE Workshop on Dependable and 
+        Real-Time E-Commerce Systems, 1998.
+\bibitem[Sham\_79]{sham79}
+        Adi Shamir: {\sl How to Share a Secret}; 
+        Communications of the ACM 22/11 (1979), S. 612-613.
+\end{thebibliography}
+\end{document}
+
+
+
+
